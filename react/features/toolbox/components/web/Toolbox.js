@@ -1062,8 +1062,6 @@ class Toolbox extends Component<Props, State> {
 
         return movedButtons.map(buttonName => {
             switch (buttonName) {
-                case 'desktop':
-                    return this._renderDesktopSharingButton(true);
                 case 'chat':
                     return (
                         <OverflowMenuItem
@@ -1078,6 +1076,9 @@ class Toolbox extends Component<Props, State> {
                                 )
                             } />
                     );
+                case 'desktop':
+                    return this._renderDesktopSharingButton(true);
+
                 case 'raisehand':
                     return (
                         <OverflowMenuItem
@@ -1242,8 +1243,6 @@ class Toolbox extends Component<Props, State> {
         return (
             <div className='toolbox-content'>
                 <div className='button-group-left'>
-                    {buttonsLeft.indexOf('desktop') !== -1
-                        && this._renderDesktopSharingButton()}
                     {buttonsLeft.indexOf('chat') !== -1
                         && <div className='toolbar-button-with-badge'>
                             <ToolbarButton
@@ -1253,7 +1252,11 @@ class Toolbox extends Component<Props, State> {
                                 toggled={_chatOpen}
                                 tooltip={t('toolbar.chat')} />
                             <ChatCounter />
-                        </div>}
+                        </div>
+                    }
+                    {buttonsLeft.indexOf('desktop') !== -1
+                        && this._renderDesktopSharingButton()}
+
                     {buttonsLeft.indexOf('raisehand') !== -1
                         && <ToolbarButton
                             accessibilityLabel={t('toolbar.accessibilityLabel.raiseHand')}
@@ -1287,10 +1290,6 @@ class Toolbox extends Component<Props, State> {
                             icon={IconInvite}
                             onClick={this._onToolbarOpenInvite}
                             tooltip={t('toolbar.invite')} />}
-                    {
-                        buttonsRight.indexOf('info') !== -1
-                        && <InfoDialogButton />
-                    }
                     {buttonsRight.indexOf('overflowmenu') !== -1
                         && <OverflowMenuButton
                             isOpen={_overflowMenuVisible}
@@ -1301,6 +1300,10 @@ class Toolbox extends Component<Props, State> {
                                 {overflowMenuContent}
                             </ul>
                         </OverflowMenuButton>}
+                    {
+                        buttonsRight.indexOf('info') !== -1
+                        && <InfoDialogButton />
+                    }
                 </div>
             </div>);
     }
