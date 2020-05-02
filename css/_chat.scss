@@ -18,12 +18,6 @@
     width: $sidebarWidth;
 //     z-index: $sideToolbarContainerZ;
     z-index: 380;
-    
-    @media only screen and (max-width: 767px) {
-        #sideToolbarContainer {
-            width: 100% !important;
-        }
-    }
 
     /**
      * The sidebar (chat) is off-screen when hidden. Move it flush to the left
@@ -33,6 +27,12 @@
         left: 0;
     }
 }
+
+    @media only screen and (max-width: 767px) {
+        #sideToolbarContainer {
+            width: 100% !important;
+        }
+    }
 
 #chatconversation {
     box-sizing: border-box;
