@@ -173,11 +173,11 @@ class WelcomePage extends AbstractWelcomePage {
                 </div>
                 <div className = 'header'>
                     <div className = 'header-image' />
-                    <div>
-                        <img src="https://meet.arghyadeep.com/images/watermark.png?v=3" alt="logo" style={{height: 80, margin: '0px auto 20px auto'}} />
-                    </div>
                     <div className = 'header-text'>
-                        <h1 className = 'header-text-title'>
+                         <div>
+                                <img src="https://meet.arghyadeep.com/images/watermark.png?v=3" alt="logo" style={{height: 120, margin: '0px auto 0px auto'}} />
+                         </div>
+                        <h1 className = 'header-text-title' style={{marginTop: 0}}>
                             {APP_NAME}
                         </h1>
                         <p className = 'header-text-description'>
