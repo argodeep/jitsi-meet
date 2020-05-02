@@ -68,11 +68,24 @@
         .button-group-left,
         .button-group-right {
             display: flex;
-            width: 0%;
+            width: unset;
         }
-        .button-group-right:last-child {
-            display: none
+        
+        @media screen and (min-width: 440px) {
+           .button-group-right:last-child {
+                display: none
+            }
         }
+        
+         @media screen and (max-width: 439px) {
+           .button-group-right:nth-last-child(1) {
+                display: none
+            }
+           .button-group-left:first-child {
+                display: none
+          }
+        }
+        
 
         .button-group-center {
             justify-content: center;
