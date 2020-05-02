@@ -64,27 +64,28 @@
         width: 100%;
         z-index: $toolbarZ;
 
-        .button-group-center,
-        .button-group-left,
-        .button-group-right {
-            display: flex;
-            width: unset;
-        }
-        
-        @media screen and (min-width: 440px) {
-           .button-group-right:last-child {
-                display: none
-            }
-        }
-        
-         @media screen and (max-width: 439px) {
-           .button-group-right:nth-last-child(1) {
-                display: none
-            }
-           .button-group-left:first-child {
-                display: none
-          }
-        }
+      .button-group-center,
+.button-group-left,
+.button-group-right {
+    display: flex;
+    width: unset;
+}
+
+@media only screen and (min-width: 440px) {
+   .button-group-right:last-child {
+        display: none
+    }
+}
+
+ @media only screen and (max-width: 439px) {
+   .button-group-right:nth-last-child(1) {
+        display: none
+    }
+   .button-group-left:first-child {
+        display: none
+  }
+}
+
         
 
         .button-group-center {
