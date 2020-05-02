@@ -175,11 +175,10 @@ class WelcomePage extends AbstractWelcomePage {
                     <div className = 'header-image' />
                     <div className = 'header-text'>
                         <h1 className = 'header-text-title'>
-                            { t('welcomepage.title') }
+                            {APP_NAME}
                         </h1>
                         <p className = 'header-text-description'>
-                            { t('welcomepage.appDescription',
-                                { app: APP_NAME }) }
+                           Video chat fully encrypted & secure.
                         </p>
                     </div>
                     <div id = 'enter_room'>
