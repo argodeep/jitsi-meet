@@ -173,12 +173,15 @@ class WelcomePage extends AbstractWelcomePage {
                 </div>
                 <div className = 'header'>
                     <div className = 'header-image' />
+                    <div>
+                        <img src="https://meet.arghyadeep.com/images/watermark.png?v=3" alt="logo" style={{height: 80, margin: '0px auto 20px auto'}} />
+                    </div>
                     <div className = 'header-text'>
                         <h1 className = 'header-text-title'>
                             {APP_NAME}
                         </h1>
                         <p className = 'header-text-description'>
-                           Video chat fully encrypted & secure.
+                          Secure & Encrypted Video Conference - Data Centers are securely hosted by Digital Ocean & Google Cloud. Security by Cloudflare.
                         </p>
                     </div>
                     <div id = 'enter_room'>
