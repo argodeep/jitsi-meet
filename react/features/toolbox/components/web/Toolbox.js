@@ -970,6 +970,10 @@ class Toolbox extends Component<Props, State> {
                 && <OverflowMenuVideoQualityItem
                     key = 'videoquality'
                     onClick = { this._onToolbarOpenVideoQuality } />,
+                <MuteEveryoneButton
+                key = 'mute-everyone'
+                showLabel = { true }
+                visible = { this._shouldShowButton('mute-everyone') } />,
             this._shouldShowButton('fullscreen')
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.fullScreen') }
@@ -998,14 +1002,7 @@ class Toolbox extends Component<Props, State> {
                 key = 'videobackgroundblur'
                 showLabel = { true }
                 visible = { this._shouldShowButton('videobackgroundblur') && !_screensharing } />,
-            <SettingsButton
-                key = 'settings'
-                showLabel = { true }
-                visible = { this._shouldShowButton('settings') } />,
-            <MuteEveryoneButton
-                key = 'mute-everyone'
-                showLabel = { true }
-                visible = { this._shouldShowButton('mute-everyone') } />,
+       
             this._shouldShowButton('stats')
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.speakerStats') }
@@ -1013,6 +1010,11 @@ class Toolbox extends Component<Props, State> {
                     key = 'stats'
                     onClick = { this._onToolbarOpenSpeakerStats }
                     text = { t('toolbar.speakerStats') } />,
+                 <SettingsButton
+                key = 'settings'
+                showLabel = { true }
+                visible = { this._shouldShowButton('settings') } />,
+        
             this._shouldShowButton('e2ee')
                 && <E2EEButton
                     key = 'e2ee'
@@ -1062,21 +1064,6 @@ class Toolbox extends Component<Props, State> {
             switch (buttonName) {
             case 'desktop':
                 return this._renderDesktopSharingButton(true);
-            case 'raisehand':
-                return (
-                    <OverflowMenuItem
-                        accessibilityLabel =
-                            { t('toolbar.accessibilityLabel.raiseHand') }
-                        icon = { IconRaisedHand }
-                        key = 'raisedHand'
-                        onClick = { this._onToolbarToggleRaiseHand }
-                        text = {
-                            t(`toolbar.${
-                                _raisedHand
-                                    ? 'lowerYourHand' : 'raiseYourHand'}`
-                            )
-                        } />
-                );
             case 'chat':
                 return (
                     <OverflowMenuItem
@@ -1091,10 +1078,23 @@ class Toolbox extends Component<Props, State> {
                             )
                         } />
                 );
+              case 'raisehand':
+                return (
+                    <OverflowMenuItem
+                        accessibilityLabel =
+                            { t('toolbar.accessibilityLabel.raiseHand') }
+                        icon = { IconRaisedHand }
+                        key = 'raisedHand'
+                        onClick = { this._onToolbarToggleRaiseHand }
+                        text = {
+                            t(`toolbar.${
+                                _raisedHand
+                                    ? 'lowerYourHand' : 'raiseYourHand'}`
+                            )
+                        } />
+                );
             case 'closedcaptions':
                 return <ClosedCaptionButton showLabel = { true } />;
-            case 'info':
-                return <InfoDialogButton showLabel = { true } />;
             case 'invite':
                 return (
                     <OverflowMenuItem
@@ -1115,6 +1115,8 @@ class Toolbox extends Component<Props, State> {
                         onClick = { this._onToolbarOpenLocalRecordingInfoDialog }
                         text = { t('localRecording.dialogTitle') } />
                 );
+                case 'info':
+                return <InfoDialogButton showLabel = { true } />;
             default:
                 return null;
             }
@@ -1240,15 +1242,6 @@ class Toolbox extends Component<Props, State> {
         return (
             <div className = 'toolbox-content'>
                 <div className = 'button-group-left'>
-                    { buttonsLeft.indexOf('desktop') !== -1
-                        && this._renderDesktopSharingButton() }
-                    { buttonsLeft.indexOf('raisehand') !== -1
-                        && <ToolbarButton
-                            accessibilityLabel = { t('toolbar.accessibilityLabel.raiseHand') }
-                            icon = { IconRaisedHand }
-                            onClick = { this._onToolbarToggleRaiseHand }
-                            toggled = { _raisedHand }
-                            tooltip = { t('toolbar.raiseHand') } /> }
                     { buttonsLeft.indexOf('chat') !== -1
                         && <div className = 'toolbar-button-with-badge'>
                             <ToolbarButton
@@ -1260,6 +1253,16 @@ class Toolbox extends Component<Props, State> {
                             <ChatCounter />
                         </div> }
                     {
+                    { buttonsLeft.indexOf('desktop') !== -1
+                        && this._renderDesktopSharingButton() }
+                    { buttonsLeft.indexOf('raisehand') !== -1
+                        && <ToolbarButton
+                            accessibilityLabel = { t('toolbar.accessibilityLabel.raiseHand') }
+                            icon = { IconRaisedHand }
+                            onClick = { this._onToolbarToggleRaiseHand }
+                            toggled = { _raisedHand }
+                            tooltip = { t('toolbar.raiseHand') } /> }
+                   
                         buttonsLeft.indexOf('closedcaptions') !== -1
                             && <ClosedCaptionButton />
                     }
