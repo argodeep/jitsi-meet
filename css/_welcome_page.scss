@@ -1,6 +1,7 @@
 body.welcome-page {
     background: inherit;
     overflow: auto;
+    background-color: #1B2638;
 }
 
 .welcome {
@@ -46,13 +47,14 @@ body.welcome-page {
         }
 
         .header-text-description {
-            display: $welcomePageHeaderTextDescriptionDisplay;
+//             display: $welcomePageHeaderTextDescriptionDisplay;
             color: $welcomePageDescriptionColor;
             font-size: $welcomePageHeaderTextDescriptionFontSize;
             font-weight: $welcomePageHeaderTextDescriptionFontWeight;
             line-height: $welcomePageHeaderTextDescriptionLineHeight;
             margin-bottom: $welcomePageHeaderTextDescriptionMarginBottom;
-            align-self: $welcomePageHeaderTextDescriptionAlignSelf;
+            text-align: center;
+//             align-self: $welcomePageHeaderTextDescriptionAlignSelf;
         }
 
         #enter_room {
@@ -154,7 +156,7 @@ body.welcome-page {
         height: $welcomePageButtonHeight;
         font-size: $welcomePageButtonFontSize;
         font-weight: $welcomePageButtonFontWeight;
-        background: #0074E0;
+        background: #1B2638;
         border-radius: $welcomePageButtonBorderRadius;
         color: #FFFFFF;
         text-align: center;
