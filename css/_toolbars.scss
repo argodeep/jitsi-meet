@@ -70,6 +70,9 @@
             display: flex;
             width: 0%;
         }
+        .button-group-right:last-child {
+            display: none
+        }
 
         .button-group-center {
             justify-content: center;
