@@ -1,5 +1,5 @@
 #sideToolbarContainer {
-    background-color: $newToolbarBackgroundColor;
+    background-color: #162637;
     box-sizing: border-box;
     color: #FFF;
     display: flex;
@@ -8,14 +8,22 @@
      * Make the sidebar flush with the top of the toolbar. Take the size of
      * the toolbar and subtract from 100%.
      */
-    height: calc(100% - #{$newToolbarSizeWithPadding});
+//     height: calc(100% - #{$newToolbarSizeWithPadding});
+    height: 100%;
     left: -$sidebarWidth;
     overflow: hidden;
     position: absolute;
     top: 0;
     transition: left 0.5s;
     width: $sidebarWidth;
-    z-index: $sideToolbarContainerZ;
+//     z-index: $sideToolbarContainerZ;
+    z-index: 380;
+    
+    @media only screen and (max-width: 767px) {
+        #sideToolbarContainer {
+            width: 100% !important;
+        }
+    }
 
     /**
      * The sidebar (chat) is off-screen when hidden. Move it flush to the left
