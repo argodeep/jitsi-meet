@@ -175,7 +175,7 @@ class WelcomePage extends AbstractWelcomePage {
                     <div className = 'header-image' />
                     <div className = 'header-text'>
                          <div>
-                                <img src="https://meet.arghyadeep.com/images/watermark.png?v=3" alt="logo" style={{height: 120, margin: '0px auto 0px auto'}} />
+                                <img src="https://meet.arghyadeep.com/images/logo.png?v=3" alt="logo" style={{height: 120, margin: '0px auto 0px auto'}} />
                          </div>
                         <h1 className = 'header-text-title' style={{marginTop: 0}}>
                             {APP_NAME}
